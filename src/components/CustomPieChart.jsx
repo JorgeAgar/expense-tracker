@@ -16,19 +16,26 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const CustomPieChart = ({ data }) => {
+  const total = data.reduce((sum, item) => sum + (item.value || 0), 0);
   return (
-    <PieChart width={400} height={400} >
-      <Pie
-        data={data}
-        dataKey="value"
-        nameKey="name"
-        cx="50%"
-        cy="50%"
-        outerRadius={"100%"}
-        innerRadius={"50%"}
-      />
-      <Tooltip content={<CustomTooltip />} />
-    </PieChart>
+    <div className="relative w-[400px] h-[400px]">
+      <PieChart width={400} height={400}>
+        <Pie
+          data={data}
+          dataKey="value"
+          nameKey="name"
+          cx="50%"
+          cy="50%"
+          outerRadius={"100%"}
+          innerRadius={"50%"}
+        />
+        <Tooltip content={<CustomTooltip />} />
+      </PieChart>
+
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <p className="font-bold text-4xl">${total}</p>
+      </div>
+    </div>
   );
 };
 

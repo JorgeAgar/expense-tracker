@@ -1,9 +1,10 @@
 import { PieChart } from "recharts";
 import { Pie } from "recharts";
+import { Tooltip } from "recharts";
 
 const CustomPieChart = ({ data }) => {
   return (
-    <PieChart width={400} height={400}>
+    <PieChart width={400} height={400} >
       <Pie
         data={data}
         dataKey="value"
@@ -11,9 +12,9 @@ const CustomPieChart = ({ data }) => {
         cx="50%"
         cy="50%"
         outerRadius={"100%"}
-        innerRadius={"80%"}
-        paddingAngle={3}
+        innerRadius={"50%"}
       />
+      <Tooltip />
     </PieChart>
   );
 };

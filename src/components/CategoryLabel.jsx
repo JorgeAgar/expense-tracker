@@ -1,6 +1,6 @@
 const CategoryLabel = ({ category }) => {
     return (
-        <span className="text-2xl text-black font-bold">
+        <span className="text-4xl text-black font-bold">
             {category}
         </span>
     );

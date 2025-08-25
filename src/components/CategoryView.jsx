@@ -10,11 +10,11 @@ const data = [
 
 const CategoryView = () => {
   return (
-    <>
+    <section className="flex flex-col items-center justify-center gap-4 bg-gray-100 mt-32 py-24">
       <CategoryLabel category="Categoría" />
       <CustomPieChart data={data} />
-      <CategoryText text="Descripción de la categoría" />
-    </>
+      <CategoryText text="Descripción de la categoría o texto interesante" />
+    </section>
   );
 };
 

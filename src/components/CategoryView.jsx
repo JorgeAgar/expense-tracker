@@ -1,3 +1,5 @@
+import CategoryLabel from "./CategoryLabel";
+import CategoryText from "./CategoryText";
 import CustomPieChart from "./CustomPieChart";
 
 const data = [
@@ -7,7 +9,13 @@ const data = [
 ];
 
 const CategoryView = () => {
-  return <CustomPieChart data={data} />;
+  return (
+    <>
+      <CategoryLabel category="Categoría" />
+      <CustomPieChart data={data} />
+      <CategoryText text="Descripción de la categoría" />
+    </>
+  );
 };
 
 export default CategoryView;

@@ -1,4 +1,5 @@
 import { Sankey, Tooltip } from "recharts";
+import CustomSankeyNode from "./CustomSankeyNode";
 
 const CustomSankeyChart = ({ data }) => {
   return (
@@ -6,7 +7,7 @@ const CustomSankeyChart = ({ data }) => {
       width={960}
       height={500}
       data={data}
-      node={{stroke: "#77c878", strokeWidth: 2}}
+      node={<CustomSankeyNode />}
       nodePadding={50}
       margin={{
         left: 200,
